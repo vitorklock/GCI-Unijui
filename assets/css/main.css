@@ -31,25 +31,38 @@ h2 {
 }
 h3 {
     margin: 15px 0 10px 0;
-    font-size: 20px;
+    font-size: 25px;
 }
 h4 {
     margin: 10px 0 10px 0;
-    font-size: 15px;
+    font-size: 18px;
 }
 
 h3 ~ p,
-h3 ~ h4 {
+h3 ~ h4,
+h3 ~ ul {
     margin-left: 20px;
 }
-h4 ~ p {
+h4 ~ p,
+h4 ~ ul  {
     margin-left: 40px;
 }
+ul ~ p,
+p ~ ul,
+p ~ p {
+    margin-top: 10px;
+}
 
-p {
+p, 
+ul {
     margin: 0;
     padding: 0;
-    font-size: 12px;
+    font-size: 16px;
+    text-align: justify;
+}
+
+li {
+    margin: 5px 0 5px 18px;
 }
 
 html,
