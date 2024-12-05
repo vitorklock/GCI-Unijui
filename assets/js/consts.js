@@ -7,4 +7,5 @@ const QUERY = {
     main: $('main'),
     navbar: $('.navbar'),
     webBtn: $('#web-btn'),
+    sections: $('.article .sections'),
 }
