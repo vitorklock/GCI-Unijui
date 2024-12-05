@@ -4,16 +4,15 @@ class Sections {
     sections = [];
 
     constructor() {
-
         this.sections.push(
-            ...$('.article .text h3').map((i, e) => ({
+            ...$('.article .text').find('h2,h3,h4').map((i, e) => ({
                 button: this.createBtn(i, e.innerText),
             }))
         )
     }
 
     createBtn(i, text) {
-        const $btn = $(`<button>${text}</button>`);
+        const $btn = $(`<button class="btn">${text}</button>`);
 
         $btn.appendTo(QUERY.sections);
 

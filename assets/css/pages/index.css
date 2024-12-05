@@ -38,8 +38,15 @@
 }
 
 .article .sections {
-    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
 }
+
+.article .sections button {
+    
+}   
 
 .article .text {
     background: var(--gray-400);
@@ -89,6 +96,12 @@ aside .content {
         flex-direction: row;
         overflow-x: auto;
         width: 100%;
+        min-height: calc(var(--aside-content-size) + 20px);
+        margin-bottom: 10px;
+    }
+
+    #content > .flex {
+        gap: 0px;
     }
 
     #content > .flex {
@@ -109,15 +122,12 @@ aside .content {
     .article {
         padding: 0 20px;
     }
+
     .article .sections {
         position: fixed;
         left: 0;
         bottom: 0;
         height: calc(100% - var(--navbar-height) - 180px);
-    }
-
-    #content > .flex {
-        gap: 20px;
     }
 
     .wrapper {
