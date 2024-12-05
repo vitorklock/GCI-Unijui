@@ -5,6 +5,8 @@
     --gray-400: #f2f2f2;
     --gray-600: #615f5f;
 
+    --dark-text: #4e4e4e;
+
     --navbar-height: 80px;
     --sidebar-width: 60px;
 
@@ -63,7 +65,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    color: #4e4e4e;
+    color: var(--dark-text);
     font-family: "Montserrat", sans-serif;
     overflow-x: hidden;
 }
@@ -124,6 +126,7 @@ body {
     align-items: center;
     top: 0;
     left: 0;
+    z-index: 100;
 }
 
 .sidebar .toggler {

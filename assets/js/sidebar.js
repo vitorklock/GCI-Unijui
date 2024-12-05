@@ -3,7 +3,8 @@ class Sidebar {
     shown;
 
     constructor() {
-        this.close();
+        if (window.innerWidth > 576) this.open();
+        else this.close();
     }
 
     open() {
@@ -17,6 +18,8 @@ class Sidebar {
             $('.sidebar').css({ width: '100vw', position: 'fixed' })
                 .addClass('shown');
         }
+
+        $('.article .sections .btn').removeClass('shrink');
     }
 
     close() {
@@ -30,6 +33,8 @@ class Sidebar {
             $('.sidebar').css({ position: 'relative' });
         })()
         $('.wrapper').css('width', '100vw');
+
+        $('.article .sections .btn').addClass('shrink');
     }
 
     toggle() {

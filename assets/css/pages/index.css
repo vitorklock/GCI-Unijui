@@ -19,17 +19,12 @@
     gap: 40px;
 }
 
-.sections {
-    width: 200px;
-    overflow-y: auto;
-}
-
 .article {
     flex-grow: 1;
     overflow: hidden;
     overflow-y: auto;
     display: flex;
-    min-height: 800px;
+    /* min-height: 800px; */
     border-radius: var(--radius-md);
 }
 
@@ -42,11 +37,20 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
+    width: 600px;
+    overflow-y: auto;
 }
 
-.article .sections button {
-    
-}   
+.article .sections .btn {
+    margin-right: 20px;
+    opacity: 1;
+    order: 2;
+}
+
+.article .sections .btn .count {
+    display: none;
+    font-weight: 800;
+}
 
 .article .text {
     background: var(--gray-400);
@@ -108,12 +112,6 @@ aside .content {
         flex-direction: column-reverse;
         overflow-y: scroll;
     }
-}
-
-@media (max-width: 576px) {
-    h2 {
-        font-size: 24px;
-    }
 
     aside {
         padding: 0 20px;
@@ -127,11 +125,46 @@ aside .content {
         position: fixed;
         left: 0;
         bottom: 0;
-        height: calc(100% - var(--navbar-height) - 180px);
+        transform: translateX(-100%);
+        height: calc(100% - var(--navbar-height) - 120px);
+        width: 400px;
+        overflow: visible;
+        justify-content: flex-start;
+    }
+
+    .article .sections .btn {
+        transform: translateX(120px);
+        justify-content: flex-end;
+        gap: 20px;
+        background-color: #fff;
+        color: var(--dark-text);
+    }
+
+    .article .sections .btn.shrink {
+        transform: translateX(60px);
+    }
+
+    .article .sections .btn .count {
+        display: block;
+    }
+
+    .article .sections .btn.active {
+        transform: translateX(calc(100% - 20px));
+        order: 1;
     }
 
     .wrapper {
         padding-left: 0;
         padding-right: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .article .sections .btn {
+        transform: translateX(50px);
+    }
+
+    h2 {
+        font-size: 24px;
     }
 }

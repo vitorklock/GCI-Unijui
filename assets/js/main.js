@@ -35,7 +35,7 @@ const ANIMATIONS = {
                 fn: async () => {
                     if ($(window).width() >= 576) {
                         await sleep(3000);
-                        SIDEBAR.open();
+                        SIDEBAR.close();
                     }
                 },
             }

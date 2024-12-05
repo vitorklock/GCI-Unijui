@@ -12,10 +12,16 @@ class Sections {
     }
 
     createBtn(i, text) {
-        const $btn = $(`<button class="btn">${text}</button>`);
+        const $btn = $(`<button class="btn">
+            <span>${text}</span>
+            <span class="count">${i + 1}</span>
+            </button>`);
 
         $btn.appendTo(QUERY.sections);
 
+        $btn.on('click', (e) => {
+            $(e.target).addClass('active')
+        })
         return $btn;
     }
 
