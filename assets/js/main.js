@@ -45,7 +45,7 @@ const ANIMATIONS = {
 
 $(document).ready(async () => {
 
-    if (!(window.location.host.includes('localhost') || window.location.host.includes('127.0.0.1'))) {
+    if (!(window.location.host.includes('5500'))) {
         QUERY.webBtn.hide();
     }
 
