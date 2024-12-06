@@ -50,7 +50,7 @@ $(document).ready(async () => {
     }
 
     ANIMATIONS.start.play();
-    ANIMATIONS.start.stop();
+    // ANIMATIONS.start.stop();
 
     $(document).on('keydown', (e) => {
         console.log(e.key)
