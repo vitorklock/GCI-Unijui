@@ -27,7 +27,7 @@ O objetivo deste projeto é criar um **servidor web** que exibe um site dinâmic
 
 1. **Clone o repositório**:
    ```bash
-   git clone <URL_DO_REPOSITORIO>
+   git clone https://github.com/vitorklock/GCI-Unijui
 
 2. **Acessando o Projeto**:
 Usando o Five Server:
