@@ -45,6 +45,7 @@
     margin-right: 20px;
     opacity: 1;
     order: 2;
+    animation-duration: 800ms;
 }
 
 .article .sections .btn .count {
@@ -56,10 +57,15 @@
     background: var(--gray-400);
     flex-grow: 1;
     overflow: hidden;
-    padding: 20px;
+    padding: 40px;
     border-radius: var(--radius-md);
     overflow: hidden;
     overflow-y: auto;
+    position: relative;
+}
+
+.article .text * {
+    position: relative;
 }
 
 aside {
@@ -110,15 +116,11 @@ aside .content {
 
     #content > .flex {
         flex-direction: column-reverse;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 
-    aside {
-        padding: 0 20px;
-    }
-
-    .article {
-        padding: 0 20px;
+    .article .text {
+        padding: 20px;
     }
 
     .article .sections {
@@ -130,6 +132,7 @@ aside .content {
         width: 400px;
         overflow: visible;
         justify-content: flex-start;
+        z-index: 10;
     }
 
     .article .sections .btn {
@@ -154,14 +157,27 @@ aside .content {
     }
 
     .wrapper {
-        padding-left: 0;
-        padding-right: 0;
+        padding-left: 60px;
     }
 }
 
 @media (max-width: 576px) {
     .article .sections .btn {
         transform: translateX(50px);
+    }
+
+    .article,
+    aside {
+        padding-left: 20px;
+    }
+
+    .article {
+        padding-right: 20px;
+    }
+
+    .wrapper {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     h2 {

@@ -15,6 +15,12 @@
     --aside-content-size: 200px;
 }
 
+@media (max-width: 1024px) {
+    :root {
+        --aside-content-size: 160px;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -46,7 +52,7 @@ h3 ~ ul {
     margin-left: 20px;
 }
 h4 ~ p,
-h4 ~ ul  {
+h4 ~ ul {
     margin-left: 40px;
 }
 ul ~ p,
@@ -55,7 +61,7 @@ p ~ p {
     margin-top: 10px;
 }
 
-p, 
+p,
 ul {
     margin: 0;
     padding: 0;
@@ -190,6 +196,16 @@ body {
         left: calc(100% - 66px);
         top: 20px;
     }
+
+    .sidebar .toggler {
+        background-color: #fff;
+        opacity: 1;
+    }
+
+    .sidebar .toggler svg {
+        background-color: #fff;
+        fill: var(--dark-text);
+    }
 }
 
 .sidebar.shown .toggler svg {
@@ -197,26 +213,33 @@ body {
     fill: var(--gray-600);
 }
 
-.sidebar button:not(.toggler) {
+.sidebar button:not(.toggler),
+.sidebar a:not(.toggler) {
     height: 60px;
     width: 60px;
     background: transparent;
     border: none;
     padding: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.sidebar button:not(.toggler) img {
+.sidebar button:not(.toggler) img,
+.sidebar a:not(.toggler) img {
     height: 100%;
     width: auto;
     transform: scale(0.9);
 }
 
-.sidebar button:not(.toggler):hover img {
+.sidebar button:not(.toggler):hover img,
+.sidebar a:not(.toggler):hover img {
     transform: scale(1);
 }
 
-.sidebar button:not(.toggler):active img {
+.sidebar button:not(.toggler):active img,
+.sidebar a:not(.toggler):active img {
     transform: scale(0.6);
 }
 
@@ -254,8 +277,8 @@ a.logo {
 
 @media (max-width: 460px) {
     a.logo {
-        width: calc(100% - 60px);
-        height: calc(100% - 60px);
+        width: 350px;
+        height: 350px;
     }
 
     a.logo span {
