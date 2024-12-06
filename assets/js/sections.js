@@ -40,7 +40,7 @@ class Sections {
     }
 
     createBtn(i, text) {
-        const $btn = $(`<button class="btn">
+        const $btn = $(`<button class="btn shrink">
             <span>${text}</span>
             <span class="count">${i + 1}</span>
             </button>`);

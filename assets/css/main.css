@@ -182,20 +182,6 @@ body {
     left: 69px;
 }
 
-.image-container {
-    height: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
 .text-container {
     position: relative;
     height: 50%;
@@ -411,7 +397,7 @@ main {
     h4 {
         font-size: 16px;
     }
-    
+
     p,
     ul {
         margin: 0;
