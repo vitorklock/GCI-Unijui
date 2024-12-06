@@ -138,6 +138,7 @@ aside .content {
 
     .article .text {
         padding: 20px;
+        border-radius: var(--radius-md);
     }
 
     .article .sections {

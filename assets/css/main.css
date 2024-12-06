@@ -107,6 +107,19 @@ body {
     }
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+    background-color: var(--gray-600);
+    border-radius: var(--radius-md);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--gray-400);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--gray-600);
+}
+
 .navbar {
     animation: expand 0.8s linear;
     height: var(--navbar-height);
