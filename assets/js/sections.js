@@ -1,15 +1,42 @@
 
+const SECTION_OFFSET_PX = 20
+
 class Sections {
 
     sections = [];
 
     constructor() {
         this.sections.push(
-            ...QUERY.article.find('h2,h3,h4').map((i, e) => ({
+            ...QUERY.article.find('h3,h4').map((i, e) => ({
                 button: this.createBtn(i, e.innerText),
                 header: $(e),
             }))
         )
+
+        $(document).ready(() => {
+            QUERY.article.on('scroll', debounce(() => {
+                console.log('-----')
+
+                const visibilities = this.sections.map(s => {
+
+                    const articleOffset = QUERY.article.offset().top;
+                    const sectionOffset = s.header.offset().top;
+                    console.log(Math.round(sectionOffset - SECTION_OFFSET_PX) - 1, articleOffset)
+
+                    return Math.round(sectionOffset - SECTION_OFFSET_PX) - 1 > articleOffset;
+                });
+
+                console.log(visibilities)
+
+                const index = visibilities.findIndex((bool) => bool);
+
+                const current = (index === -1 ? visibilities.length : index) - 1;
+
+                console.log(current)
+
+                this.activateButton(current >= 0 && current);
+            }, 600));
+        });
     }
 
     createBtn(i, text) {
@@ -36,16 +63,16 @@ class Sections {
         const scrollTop = QUERY.article.scrollTop();
 
         const scrollTopCalc = sectionOffset + scrollTop - articleOffset;
-        const offsetPx = 20;
 
         QUERY.article.animate({
-            scrollTop: scrollTopCalc - offsetPx,
+            scrollTop: scrollTopCalc - SECTION_OFFSET_PX,
         });
-
-        this.sections.forEach(s => s.button.removeClass('active'));
-        section.button.addClass('active');
     }
 
+    activateButton(i) {
+        this.sections.forEach(s => s.button.removeClass('active'));
+        if (Number.isSafeInteger(i) && this.sections[i]) this.sections[i].button.addClass('active');
+    }
 }
 
 const sections = new Sections();

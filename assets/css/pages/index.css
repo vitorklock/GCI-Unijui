@@ -22,7 +22,7 @@
 .article {
     flex-grow: 1;
     overflow: hidden;
-    overflow-y: auto;
+    /* overflow-y: auto; */
     display: flex;
     /* min-height: 800px; */
     border-radius: var(--radius-md);
@@ -117,12 +117,10 @@ aside .content {
     }
 
     #content > .flex {
-        gap: 0px;
-    }
-
-    #content > .flex {
         flex-direction: column-reverse;
-        overflow-y: auto;
+        /* overflow-y: auto; */
+        gap: 0px;
+        height: auto;
     }
 
     .article .text {
@@ -137,7 +135,8 @@ aside .content {
         height: calc(100% - var(--navbar-height) - 120px);
         width: 400px;
         overflow: visible;
-        justify-content: flex-start;
+        gap: 0;
+        justify-content: space-evenly;
         z-index: 10;
     }
 
@@ -175,6 +174,10 @@ aside .content {
     .article,
     aside {
         padding-left: 20px;
+    }
+
+    aside {
+        padding-right: 20px;
     }
 
     .article {
