@@ -78,9 +78,11 @@ aside .content {
     width: var(--aside-content-size);
     height: var(--aside-content-size);
     flex-grow: 1;
-    background-color: red;
+    background-color: rgb(192, 206, 216);
     border-radius: var(--radius-md);
     overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
 }
 
 aside,
